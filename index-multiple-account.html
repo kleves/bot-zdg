@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Whatsapp API by Pedrinho da NASA</title>
+	<title>Whatsapp API | aquecimento de número</title>
 	<style>
 	.client {
 		border: 1px solid #ccc;
@@ -18,9 +18,8 @@
 <body>
 
 	<div id="app">
-		<h1>Whatsapp API</h1>
-		<h3>Entre agora para comunidade ZDG: <a href="https://comunidadezdg.com.br/">clique aqui</a></h3>
-		<p>ZDG MOD</p>
+		<h1>Whatsapp API</h1> 
+		<p>MODULO</p>
 		<div class="form-container">
 			<label for="client-id">ID</label><br>
 			<input type="text" id="client-id" placeholder="ID">
@@ -53,8 +52,8 @@
 				var clientId = $('#client-id').val();
 				var clientDescription = $('#client-description').val();
 				var template = $('.client').first().clone()
-										   .removeClass('hide')
-										   .addClass(clientId);
+							.removeClass('hide')
+							.addClass(clientId);
 				template.find('.title').html(clientId);
 				template.find('.description').html(clientDescription);
 				$('.client-container').append(template);
@@ -74,8 +73,8 @@
 					var clientId = session.id;
 					var clientDescription = session.description;
 					var template = $('.client').first().clone()
-											   .removeClass('hide')
-											   .addClass(clientId);
+								.removeClass('hide')
+								.addClass(clientId);
 					template.find('.title').html(clientId);
 					template.find('.description').html(clientDescription);
 					$('.client-container').append(template);
