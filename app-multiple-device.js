@@ -79,13 +79,13 @@ const createSession = function(id, description) {
     console.log('QR RECEIVED', qr);
     qrcode.toDataURL(qr, (err, url) => {
       io.emit('qr', { id: id, src: url });
-      io.emit('message', { id: id, text: 'QR Code received, scan please!' });
+      io.emit('message', { id: id, text: 'QR Code recebido, basta escanear!' });
     });
   });
 
   client.on('ready', () => {
     io.emit('ready', { id: id });
-    io.emit('message', { id: id, text: 'Whatsapp is ready!' });
+    io.emit('message', { id: id, text: 'Whatsapp esta sendo lido!' });
 
     const savedSessions = getSessionsFile();
     const sessionIndex = savedSessions.findIndex(sess => sess.id == id);
@@ -95,15 +95,15 @@ const createSession = function(id, description) {
 
   client.on('authenticated', () => {
     io.emit('authenticated', { id: id });
-    io.emit('message', { id: id, text: 'Whatsapp is authenticated!' });
+    io.emit('message', { id: id, text: 'Whatsapp autenticado com sucesso!' });
   });
 
   client.on('auth_failure', function() {
-    io.emit('message', { id: id, text: 'Auth failure, restarting...' });
+    io.emit('message', { id: id, text: 'Autenticacao falhou! reiniciando...' });
   });
 
   client.on('disconnected', (reason) => {
-    io.emit('message', { id: id, text: 'Whatsapp is disconnected!' });
+    io.emit('message', { id: id, text: 'Whatsapp esta desconectado!' });
     client.destroy();
     client.initialize();
 
@@ -191,7 +191,7 @@ app.post('/send-message', async (req, res) => {
   if (!isRegisteredNumber) {
     return res.status(422).json({
       status: false,
-      message: 'The number is not registered'
+      message: 'O numero nao esta usando whatsapp'
     });
   }
 
