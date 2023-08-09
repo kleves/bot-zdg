@@ -1,7 +1,7 @@
 {
-  "name": "bot-zdg",
+  "name": "bot-whats",
   "version": "1.0.0",
-  "description": "bot-zdg: based on Whatsapp API",
+  "description": "bot-whats: based on Whatsapp API",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -12,7 +12,7 @@
     "whatsapp-api",
     "node.js"
   ],
-  "author": "Pedro",
+  "author": "Kleves",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.20.0",
